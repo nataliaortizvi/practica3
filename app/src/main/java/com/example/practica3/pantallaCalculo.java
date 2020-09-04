@@ -65,7 +65,7 @@ public class pantallaCalculo extends AppCompatActivity {
                     String proyectoUno = txProyecto1.getText().toString();
                     String proyectoDos = txProyecto2.getText().toString();
 
-                    if((parcialUno.equals("")) && (parcialDos.equals("")) && (quicesP.equals("")) && (ejerciciosP.equals("")) && (proyectoUno.equals("")) && (proyectoDos.equals(""))){
+                    if((parcialUno.equals("")) || (parcialDos.equals("")) || (quicesP.equals("")) || (ejerciciosP.equals("")) || (proyectoUno.equals("")) || (proyectoDos.equals(""))){
                         //si alguno de las celdas está vacia no hace el calculo
                         Toast.makeText(this,"Llene todas las notas", Toast.LENGTH_LONG).show();
 
