@@ -1,8 +1,11 @@
 package com.example.practica3;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
@@ -13,6 +16,7 @@ public class pantallaFinal extends AppCompatActivity {
 
     private Button btReinicio;
     private TextView txHola, txNota;
+    private ConstraintLayout fondo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +26,21 @@ public class pantallaFinal extends AppCompatActivity {
         btReinicio = findViewById(R.id.btReinicio);
         txHola = findViewById(R.id.txHola);
         txNota = findViewById(R.id.txNota);
+        fondo = findViewById(R.id.fondo);
+
+        SharedPreferences fondos = getSharedPreferences("colores", MODE_PRIVATE);
+        String color = fondos.getString("color","no_fondo");
+
+        if(color.equals("rosa")){
+            fondo.setBackgroundColor((Color.rgb(243,167,230)));
+        }
+        if(color.equals("azul")){
+            fondo.setBackgroundColor((Color.rgb(139,214,223)));
+        }
+        if(color.equals("morado")){
+            fondo.setBackgroundColor((Color.rgb(168,144,227)));
+        }
+
 
         //para reducir el numero de decimales que aparecen
         Double notaFinal = getIntent().getExtras().getDouble("nota final");
@@ -34,6 +53,16 @@ public class pantallaFinal extends AppCompatActivity {
 
         txHola.setText("Hola, "+nom+"! Tu nota final es de..");
 
+
+        btReinicio.setOnClickListener(
+                (view) -> {
+                    //paso a la pantalla final
+                    Intent i = new Intent(this, MainActivity.class);
+                    startActivity(i);
+                    overridePendingTransition(R.anim.entrada, R.anim.salida);
+
+                }
+        );
 
     }
 }
