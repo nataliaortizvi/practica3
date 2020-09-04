@@ -17,6 +17,12 @@ public class pantallaColor extends AppCompatActivity {
     private ConstraintLayout fondo;
     private String color = "nada";
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.entrada2, R.anim.salida2);
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
                 fondo.setBackgroundColor((Color.rgb(168,144,227)));
             }
 
-        }else if(requestCode == 1 && resultCode == RESULT_CANCELED){
+        }else if(requestCode == 11 && resultCode == RESULT_CANCELED){
             Toast.makeText(this, "Operación cancelada", Toast.LENGTH_LONG).show();
         }
     }
