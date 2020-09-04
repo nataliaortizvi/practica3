@@ -59,7 +59,7 @@ public class pantallaFinal extends AppCompatActivity {
                     //paso a la pantalla final
                     Intent i = new Intent(this, MainActivity.class);
                     startActivity(i);
-                    overridePendingTransition(R.anim.entrada, R.anim.salida);
+                    overridePendingTransition(R.anim.entrada2, R.anim.salida2);
 
                 }
         );

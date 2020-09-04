@@ -20,6 +20,12 @@ public class pantallaCalculo extends AppCompatActivity {
     private ConstraintLayout fondo;
 
     @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.entrada, R.anim.salida);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantalla_calculo);
@@ -33,6 +39,7 @@ public class pantallaCalculo extends AppCompatActivity {
         txProyecto1 = findViewById(R.id.txProyecto1);
         txProyecto2 = findViewById(R.id.txProyecto2);
         fondo = findViewById(R.id.fondo);
+
 
 
         SharedPreferences fondos = getSharedPreferences("colores", MODE_PRIVATE);
